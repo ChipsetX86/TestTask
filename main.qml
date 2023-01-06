@@ -79,8 +79,7 @@ ApplicationWindow {
 
                 TextEdit {
                     id: comment
-                    anchors.left: parent.left
-                    anchors.right: parent.right
+                    Layout.alignment: Qt.AlignLeft | Qt.AlignBaseline
                     text: Utils.getComment(currentCurrency)
                     font.pointSize: 20
                     padding: 5
@@ -91,6 +90,14 @@ ApplicationWindow {
                         text: comment.placeholderText + " " + currentCurrency
                         color: "#aaa"
                         visible: !comment.text
+                    }
+                }
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        mouse.accepted = false
+                        comment.focus = true
                     }
                 }
             }
