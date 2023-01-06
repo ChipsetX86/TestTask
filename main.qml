@@ -68,6 +68,9 @@ ApplicationWindow {
         Item {
             ColumnLayout {
                 spacing: 2
+                anchors.left: parent.left
+                anchors.right: parent.right
+
                 Label {
                     font.pointSize: 20
                     padding: 5
@@ -76,6 +79,8 @@ ApplicationWindow {
 
                 TextEdit {
                     id: comment
+                    anchors.left: parent.left
+                    anchors.right: parent.right
                     text: Utils.getComment(currentCurrency)
                     font.pointSize: 20
                     padding: 5
