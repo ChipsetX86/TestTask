@@ -2,7 +2,7 @@ function makeRequest(modelCurrency)
 {
     var doc = new XMLHttpRequest();
     doc.onreadystatechange = function() {
-        if (doc.readyState == XMLHttpRequest.DONE) {
+        if (doc.readyState === XMLHttpRequest.DONE) {
             var json = JSON.parse(doc.responseText.toString());
             modelCurrency.clear()
             for(var key in json.bpi) {
