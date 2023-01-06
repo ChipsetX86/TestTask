@@ -45,6 +45,8 @@ ApplicationWindow {
                 }
                 focus: true
 
+                ScrollBar.vertical: ScrollBar {}
+
             }
 
             Button {
