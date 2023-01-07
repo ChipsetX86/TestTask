@@ -98,7 +98,6 @@ ApplicationWindow {
                             anchors.fill: parent
                             preventStealing: true
                             onClicked: {
-                                console.log("click")
                                 mouse.accepted = false
                                 comment.focus = true
                             }
