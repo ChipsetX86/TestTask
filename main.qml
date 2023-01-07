@@ -83,21 +83,26 @@ ApplicationWindow {
                     text: Utils.getComment(currentCurrency)
                     font.pointSize: 20
                     padding: 5
+
                     property string placeholderText: "Введите комментарий к валюте"
 
                     Text {
                         font.pointSize: 20
+                        padding: 5
+
                         text: comment.placeholderText + " " + currentCurrency
                         color: "#aaa"
                         visible: !comment.text
-                    }
-                }
 
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: {
-                        mouse.accepted = false
-                        comment.focus = true
+                        MouseArea {
+                            anchors.fill: parent
+                            preventStealing: true
+                            onClicked: {
+                                console.log("click")
+                                mouse.accepted = false
+                                comment.focus = true
+                            }
+                        }
                     }
                 }
             }
